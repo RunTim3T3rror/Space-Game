@@ -27,7 +27,6 @@ public class Image {
 	public Image(String folder, String name, String type){
 		try{
 			this.name = name;
-			System.out.println(name);
 			image = ImageIO.read(getClass().getResourceAsStream("/" + folder + "/" + name + type));
 		} catch(Exception e){
 			e.printStackTrace();

@@ -64,7 +64,7 @@ public class CreateState implements GameState {
             }
         }
         g.dispose();
-        File file = new File("./Recources/Default/CustomLevel.png");
+        File file = new File("./Resources/Default/CustomLevel.png");
         try {
             ImageIO.write(image, "png", file);
             gsm.changeState(GameStateManager.MENUSTATE);
