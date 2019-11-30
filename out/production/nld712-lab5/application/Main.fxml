@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.MainController">
+    <Text layoutX="178.0" layoutY="143.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome to Jurassic Park">
+        <font>
+            <Font size="40.0" />
+        </font>
+    </Text>
+    <Text layoutX="300.0" layoutY="317.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Select a zone to continue" />
+    <Button fx:id="btnB" layoutX="87.0" layoutY="418.0" mnemonicParsing="false" prefHeight="85.0" prefWidth="91.0" style="" text="B" />
+    <Button id="btnB" fx:id="btnG" layoutX="419.0" layoutY="418.0" mnemonicParsing="false" prefHeight="85.0" prefWidth="91.0" style="" text="G" />
+    <Button id="btnB" fx:id="btnD" layoutX="255.0" layoutY="418.0" mnemonicParsing="false" prefHeight="85.0" prefWidth="91.0" style="" text="D" />
+    <Button id="btnB" fx:id="btnR" layoutX="577.0" layoutY="418.0" mnemonicParsing="false" prefHeight="85.0" prefWidth="91.0" style="" text="R" />
+    <Button id="btnB" fx:id="btnX" layoutX="500.0" layoutY="600.0" mnemonicParsing="false" prefHeight="85.0" prefWidth="91.0" style="" text="X" />
+    <Button id="btnB" fx:id="btnTY" layoutX="328.0" layoutY="600.0" mnemonicParsing="false" prefHeight="85.0" prefWidth="91.0" style="" text="TY" />
+    <Button id="btnB" fx:id="btnTR" layoutX="164.0" layoutY="600.0" mnemonicParsing="false" prefHeight="85.0" prefWidth="91.0" style="" text="TR" />
+
+
+
+</Pane>
