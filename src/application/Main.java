@@ -27,7 +27,7 @@ public class Main extends Application {
     public void start(Stage stage) throws Exception{
         stage.setTitle("Space Game");
         stage.setResizable(false);
-        stage.getIcons().add(new Image("file:Recources/Default/Player.png"));
+        stage.getIcons().add(new Image("file:Resources/Default/Player.png"));
         //background size
         Canvas canvas = new Canvas(WIDTH, HEIGHT);
         GraphicsContext gc = canvas.getGraphicsContext2D();
