@@ -1,5 +1,17 @@
 # Space-Game
 ## Instructions to Run
+1. Download the Space-Game folder from github either by using `git clone https://github.com/RunTim3T3rror/Space-Game.git` or by downloading the zip.
+2. Open Eclipse
+3. On Eclipse click "File" and select "New" then "Java Project"
+4. Unselect "Use default location" from the New Java Project Popup
+5. Click Browse to select a new Location and navigate to the Space-Game-master folder and click "select folder"
+6. Click Finish at the bottom right of the New java Project Popup
+7. If Eclipse askes you to create a module-info.java select "Don't Create" at the bottom right
+8. The JavaFX library should automatically be added to the Referenced Libaries. If they aren't add all the Jars in the "libs" folder of the project to the build path.
+9. Right click on the "Resources" folder in the root of the project goto "Build Path" and select "Use as source folder"
+10. Navigate to "src/application" and open Main.java
+11. Click the green run button at the top and the project should run
+12. Controls for the game are found below
 ## Controls
 ### Main Menu
 ![alt text](https://github.com/RunTim3T3rror/Space-Game/raw/master/Screenshtos/Main%20Menu.PNG "Main Menu")
