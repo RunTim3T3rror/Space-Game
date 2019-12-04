@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<eclipse-userlibraries>
+  <library name="scene">
+    <archive path="lib/javafx.web.jar" />
+    <archive path="lib/javafx.base.jar" />
+    <archive path="lib/javafx.media.jar" />
+    <archive path="lib/javafx.graphics.jar" />
+    <archive path="lib/javafx.swing.jar" />
+    <archive path="lib/javafx-swt.jar" />
+    <archive path="lib/javafx.fxml.jar" />
+    <archive path="lib/javafx.controls.jar" />
+  </library>
+</eclipse-userlibraries>
+
