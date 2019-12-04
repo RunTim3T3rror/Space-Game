@@ -17,23 +17,31 @@ public class Load {
 	
 	//Game State Manager
 	public static GameStateManager gsm;
-	
+
+	/***
+	 * Loads image and all static data in certain class'
+	 */
 	public static void loadData(){
 		loadImages();
 		loadClasses();
 	}
-	
+
+	/***
+	 * Loads the global game state manager
+	 */
 	public static void loadGsm(){
 		gsm = new GameStateManager();
 	}
-	
-		
+
+	/***
+	 * Loads all images into hashmap
+	 */
 	private static void loadImages(){
 		images.put("Player", new Image("Player"));
 		images.put("Bullet", new Image("Bullet"));
 		images.put("CollisionSprite", new Image("CollisionSprite"));
 		images.put("MobSprite", new Image("MobSprite"));
-		images.put("BackgroundMoving", new Image("BackgroundMoving", ".gif"));
+		images.put("BackgroundMoving", new Image("BackgroundMoving"));
 		images.put("LevelOne", new Image("LevelOne"));
 		images.put("LevelTwo", new Image("LevelTwo"));
 		images.put("LevelThree", new Image("LevelThree"));
@@ -44,6 +52,9 @@ public class Load {
 		images.put("Boss", new Image("Boss"));
 	}
 
+	/***
+	 * loads the static objects in Sprite animation and levels classes
+	 */
 	private static void loadClasses(){
 		try {
 			Class.forName("application.Utilities.Sprite");
@@ -54,8 +65,13 @@ public class Load {
 		}
 	}
 
-	
-    
+
+	/***
+	 * Gets an image from the hashmap
+	 * If the image is not found in the hashmap it attempts to find the image in default folder
+	 * @param name The name of the image
+	 * @return The buffered image that was found
+	 */
 	public static BufferedImage getImage(String name){
 		if (images.containsKey(name))
 			return images.get(name).getImage();
@@ -70,6 +86,12 @@ public class Load {
 	
 	}
 
+	/***
+	 * Masks an image in all red
+	 * Sets all pixel values of an image (that aren't transparent) to have full red rgb
+	 * @param originalImage The original image
+	 * @return A copy of the original image with all red mask
+	 */
 	public static BufferedImage maskImage(BufferedImage originalImage) {
 
 		ColorModel cm = originalImage.getColorModel();

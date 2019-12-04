@@ -1,8 +1,6 @@
 package application.controller;
 
 import java.awt.event.KeyEvent;
-
-import javafx.embed.swing.SwingFXUtils;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
@@ -21,7 +19,11 @@ public class MenuState implements GameState{
 	
 	//Selected
 	private int selected;
-	
+
+	/***
+	 * Constructor for the menu
+	 * @param gsm The game state manager
+	 */
 	public MenuState(GameStateManager gsm){
 		this.gsm = gsm;
 		textFont = new Font(74);
@@ -29,12 +31,12 @@ public class MenuState implements GameState{
 		background = new Background(Load.getImage("BackgroundMoving"));
 	}
 
-	public void update(){
-		
-	}
-	
-	
+	public void update() {}
 
+	/***
+	 * Draws the view
+	 * @param g The graphics context to draw with
+	 */
 	public void draw(GraphicsContext g){
 		g.setFill(Color.WHITE);
 		g.fillRect(0, 0, 800, 600);
@@ -52,7 +54,11 @@ public class MenuState implements GameState{
 		
 	
 	}
-	
+
+	/***
+	 * Called when a key is pressed
+	 * @param e The key code of the pressed key
+	 */
 	public void keyPressed(int e){
 		if(e == KeyEvent.VK_DOWN){
 			if(selected != options.length - 1) selected++;
@@ -66,10 +72,11 @@ public class MenuState implements GameState{
 			select();
 	}
 	
-	public void keyReleased(int e){
-		
-	}
-	
+	public void keyReleased(int e){}
+
+	/***
+	 * Used to determine what should happen based on the users menu selection
+	 */
 	private void select(){
 		if(selected == 0)
 			gsm.changeState(GameStateManager.LEVELSTATE);

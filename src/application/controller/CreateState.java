@@ -4,7 +4,6 @@ import application.Main;
 import application.Utilities.Load;
 import application.model.Cell;
 import javafx.scene.canvas.GraphicsContext;
-import javafx.scene.control.TextInputDialog;
 import javafx.scene.paint.Color;
 
 import javax.imageio.ImageIO;
@@ -23,6 +22,11 @@ public class CreateState implements GameState {
 
     private Cell[][] cells = new Cell[Main.WIDTH / 50][Main.HEIGHT / 50];
 
+    /***
+     * Constructor for the create state
+     * Fills all the cells for width and height
+     * @param gsm Sets the game state manager
+     */
     public CreateState(GameStateManager gsm){
         this.gsm = gsm;
         background = new Background(Load.getImage("BackgroundMoving"));
@@ -36,9 +40,17 @@ public class CreateState implements GameState {
         cells[2][10].setCellType(Cell.CellType.PLAYER);
     }
 
+    /***
+     * Update function
+     * Does nothing
+     */
     @Override
     public void update() { }
 
+    /***
+     * Function to save the custom level to the customlevel.png
+     * Reads all the cells and constructs a map based off it
+     */
     private void save() {
         BufferedImage image = new BufferedImage(Main.WIDTH / 50,  Main.HEIGHT / 50, BufferedImage.TYPE_INT_ARGB);
         Graphics g = image.createGraphics();
@@ -73,6 +85,11 @@ public class CreateState implements GameState {
         }
     }
 
+    /***
+     * Draws the screen
+     * Draws all cells onto the screen
+     * @param g The graphics context
+     */
     @Override
     public void draw(GraphicsContext g) {
         g.setFill(Color.BLACK);
@@ -86,6 +103,11 @@ public class CreateState implements GameState {
         }
     }
 
+    /***
+     * Event when a key is pressed
+     * Handles moving cells, placing objects, and saving
+     * @param e The keycode of the key pressed
+     */
     @Override
     public void keyPressed(int e) {
         if (e == KeyEvent.VK_DOWN) {
@@ -140,8 +162,10 @@ public class CreateState implements GameState {
         }
     }
 
+    /***
+     * Called when the key is released
+     * @param e The key code of the released key
+     */
     @Override
-    public void keyReleased(int e) {
-
-    }
+    public void keyReleased(int e) { }
 }

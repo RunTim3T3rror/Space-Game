@@ -8,7 +8,12 @@ public class EntityExplosion extends Entity {
 	private Animation animation;
 	
 	private Entity attachedEntity;
-	
+
+	/***
+	 * Constructor for entity explosion
+	 * @param level The level state
+	 * @param attachedEntity The entity where the explosion will appear
+	 */
 	public EntityExplosion(LevelState level, Entity attachedEntity){
 		super(level);
 		this.attachedEntity = attachedEntity;
@@ -17,21 +22,15 @@ public class EntityExplosion extends Entity {
 		animation = new Animation(Animation.explosion);
 		setImage(animation.getImage());
 	}
-	
-	
-	public EntityExplosion(LevelState level){
-		super(level);
-		animation = Animation.explosion;
-		setImage(animation.getImage());
-	}
-	
+
+	/***
+	 * Updates the explosion animation
+	 * Removes attached entity once explosion animation finishes
+	 */
 	@Override
 	public void update() {
 		super.update();
 		animation.update();
-
-		setImage(animation.getImage());
-		
 		
 		if(animation.getCurrentImage() + 1 == animation.getLength()){
 			if(attachedEntity != null)

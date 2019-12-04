@@ -35,7 +35,10 @@ public class Animation {
 	public Animation(Animation animation){
 		this(animation.sprite, animation.points, animation.delay);
 	}
-	
+
+	/***
+	 * Updates the animation
+	 */
 	public void update(){
 		time++;
 		if(time == delay){
@@ -48,12 +51,40 @@ public class Animation {
 
 	
 	}
-	
-	//Getters
+
+	/**
+	 * Gets the current image of the animation
+	 * @return The current image of the animation
+	 */
 	public BufferedImage getImage(){return sprite.getImage(points[currentImage]);}
+
+	/**
+	 * Gets the length of the animation
+	 * @return The length of animation
+	 */
 	public int getLength(){return points.length;}
+
+	/**
+	 * Gets the current image being displayed
+	 * @return The current image
+	 */
 	public int getCurrentImage(){return currentImage;}
+
+	/***
+	 * Gets the sprite used for animation
+	 * @return The sprite
+	 */
 	public Sprite getSprite(){return sprite;}
+
+	/***
+	 * Gets the points on the sprite
+	 * @return The points
+	 */
 	public int[] getPoints(){return points;}
+
+	/***
+	 * gets delay on animation
+	 * @return The animation delay
+	 */
 	public int getDelay(){return delay;}
 }

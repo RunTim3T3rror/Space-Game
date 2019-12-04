@@ -13,6 +13,10 @@ public class EntityProjectile extends Entity{
 	protected int damage;
 	protected int fireRate;
 
+	/***
+	 * Constructor for projectile
+	 * @param level The current level
+	 */
 	public EntityProjectile(LevelState level){
 		super(level);
 		player = level.getPlayer();
@@ -23,10 +27,14 @@ public class EntityProjectile extends Entity{
 		this.setUp(true);
 	}
 
+	/***
+	 * Updates the projectile
+	 * Checks if the projectile hit any mobs in the level
+	 * removes projectile and decreases mob health if hit
+	 */
 	@Override
 	public void update() {
 		super.update();
-		this.setUp(true);
 		for(int i = 0; i < level.getMobs().size(); i++){
 			if(level.getMobs().get(i).intersection(this)) {
 				if (!level.getMobs().get(i).invincible) {

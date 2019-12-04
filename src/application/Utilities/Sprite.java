@@ -20,7 +20,7 @@ public class Sprite {
 	
 	/**
 	 * Creates a sprite sheet
-	 * @param path The path for the big image
+	 * @param name The path for the big image
 	 * @param rows The amount of rows in the sprite
 	 * @param cols The amount of columns in the sprite
 	 * @param width The width of each sprite
@@ -64,7 +64,13 @@ public class Sprite {
 	public BufferedImage getImage(int num){
 			return sprite[num];
 	}
-	
+
+	/***
+	 * Gets an image from a row and col
+	 * @param row The row
+	 * @param col The col
+	 * @return The buffered image
+	 */
 	public BufferedImage getImage(int row, int col){
 		int num;
 		num = ((height * col) + (row * width)) - col;

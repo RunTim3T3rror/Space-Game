@@ -12,7 +12,11 @@ public class LoadState implements GameState {
 	private GameStateManager gsm;
 
 	private Background bg;
-	
+
+	/***
+	 * Constructor for Load State
+	 * @param gsm The game state manager
+	 */
 	public LoadState(GameStateManager gsm){
 		this.gsm = gsm;
 		try{
@@ -24,9 +28,16 @@ public class LoadState implements GameState {
 		Load.loadData();
 		gsm.changeState(GameStateManager.MENUSTATE);
 	}
-	
+
+	/***
+	 * Update funciton
+	 */
 	public void update(){}
 
+	/***
+	 * Used to draw the background
+	 * @param g The graphics context to draw with
+	 */
 	public void draw(GraphicsContext g) {
 		bg.draw(g);
 	}

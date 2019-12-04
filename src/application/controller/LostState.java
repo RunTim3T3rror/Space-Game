@@ -17,6 +17,12 @@ public class LostState  implements GameState{
 	private Font textFont, titleFont;
 	private Background background;
 
+	/***
+	 * Constructor for lost sate
+	 * Creates backgrounds
+	 * Sets fonts
+	 * @param gsm The game state manger
+	 */
 	public LostState(GameStateManager gsm){
 		this.gsm = gsm;
 		
@@ -27,7 +33,11 @@ public class LostState  implements GameState{
 	}
 	
 	public void update(){}
-	
+
+	/**
+	 * Used to draw the text and background to the screen
+	 * @param g The graphics context to draw with
+	 */
 	public void draw(GraphicsContext g){
 		g.setFill(Color.WHITE);
 		g.fillRect(0, 0, Main.WIDTH, Main.HEIGHT);
@@ -42,7 +52,11 @@ public class LostState  implements GameState{
 		g.fillText("Press Enter to go to", 100, 250);
 		g.fillText("the main menu.", 100, 330);
 	}
-	
+
+	/***
+	 * Used to move between screens
+	 * @param k The keycode of the pressed key
+	 */
 	public void keyPressed(int k){
 		if(k == KeyEvent.VK_ENTER)
 			gsm.changeState(GameStateManager.MENUSTATE);
@@ -50,9 +64,7 @@ public class LostState  implements GameState{
 			System.exit(0);
 	}
 	
-	public void keyReleased(int k){
-		
-	}
+	public void keyReleased(int k){ }
 	
 }
 

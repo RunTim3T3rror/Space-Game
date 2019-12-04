@@ -24,7 +24,11 @@ public class LevelState implements GameState {
 
 	//Background
 	protected Background background;
-	
+
+	/***
+	 * Creats a levelstate based on a given bufferedimage map
+	 * @param map The map to construct the level off of
+	 */
 	public LevelState(BufferedImage map) {
 		this.map = map;
 		background = getBackground();
@@ -80,10 +84,18 @@ public class LevelState implements GameState {
 
 	}
 
+	/***
+	 * Removs an EntityMov from the level state at a given index
+	 * @param id The index to remove
+	 */
 	public void removeMob(int id) {
 		mobs.remove(id);
 	}
 
+	/***
+	 * Updates all entities
+	 * Checks if the level is ended
+	 */
 	public void update() {
 		updateMobs();
 		checkEnd();
@@ -117,7 +129,10 @@ public class LevelState implements GameState {
 
 	}
 
-	
+	/***
+	 * Updates all entities
+	 * @param e
+	 */
 	private void update(ArrayList<?> e) {
 		for (int i = 0; i < e.size(); i++) {
 			Entity entity = (Entity) e.get(i);
@@ -125,7 +140,11 @@ public class LevelState implements GameState {
 		}
 		
 	}
-	
+
+	/***
+	 * The function called when the player defeated all mobs
+	 * If last level go to win state
+	 */
 	private void onWin() {
 		if (Levels.currentLevel == Levels.levelSix.getLevelState()) {
 			Load.gsm.changeState(GameStateManager.WONSTATE);
@@ -135,12 +154,19 @@ public class LevelState implements GameState {
 		createEntities();
 	}
 
+	/***
+	 * Function called when the player died
+	 */
 	public void endGame() {
 		Load.gsm.changeState(GameStateManager.LOSTSTATE);
 		createEntities();
 	}
 
-
+	/***
+	 * Draw function for the level
+	 * draws all entities
+	 * @param g The graphics context to draw with
+	 */
 	public void draw(GraphicsContext g) {
 		g.clearRect(0, 0, 800, 600);
 		background.draw(g);
@@ -149,13 +175,22 @@ public class LevelState implements GameState {
 		draw(entities, g);
 	}
 
+	/***
+	 * Draws entities
+	 * @param entities Entities to draw
+	 * @param g Graphics context to draw with
+	 */
 	private void draw(ArrayList<?> entities, GraphicsContext g) {
 		for (int i = 0; i < entities.size(); i++) {
 			Entity entity = (Entity) entities.get(i);
 			entity.draw(g);
 		}
 	}
-	
+
+	/***
+	 * Called when key is pressed
+	 * @param k The key code of the pressed key
+	 */
 	public void keyPressed(int k) {
 		if (k == KeyEvent.VK_RIGHT)
 			player.setRight(true);
@@ -172,6 +207,10 @@ public class LevelState implements GameState {
 		}
 	}
 
+	/***
+	 * Called when key is released
+	 * @param k The code of the released key
+	 */
 	public void keyReleased(int k) {
 		if (k == KeyEvent.VK_RIGHT)
 			player.setRight(false);
@@ -180,19 +219,34 @@ public class LevelState implements GameState {
 	}
 
 
-	// Getters
+	/***
+	 * Returns the player of the level
+	 * @return The entity player object
+	 */
 	public EntityPlayer getPlayer() {
 		return player;
 	}
 
+	/***
+	 * Returns all mobs in the game
+	 * @return ArrayList of all mobs
+	 */
 	public ArrayList<EntityMob> getMobs() {
 		return mobs;
 	}
 
+	/***
+	 * Returns the background of the levelstate
+	 * @return The Background object
+	 */
 	protected Background getBackground(){
 		return new Background(Load.getImage("BackgroundMoving"));
 	}
-	
+
+	/***
+	 * Returns all entities in the game
+	 * @return
+	 */
 	public ArrayList<Entity> getEntities() {
 		return entities;
 	}

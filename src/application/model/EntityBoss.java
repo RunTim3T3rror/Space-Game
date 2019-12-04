@@ -15,6 +15,10 @@ public class EntityBoss extends EntityMob {
     private int nextShot;
     private int shotTime;
 
+    /***
+     * Constructor for the boss entity
+     * @param level The current level
+     */
     public EntityBoss(LevelState level) {
         super(level);
         setImage(Load.getImage("Boss"));
@@ -25,6 +29,11 @@ public class EntityBoss extends EntityMob {
         projectiles = new ArrayList<>();
     }
 
+    /***
+     * Updates the boss
+     * Updates all projectiles the boss has shot
+     * Determines when the boss will shoot next
+     */
     @Override
     public void update(){
         super.update();
@@ -40,6 +49,9 @@ public class EntityBoss extends EntityMob {
         }
     }
 
+    /***
+     * Fires a projectile for the boss position
+     */
     private void fire(){
         EntityMobProjectile projectile = new EntityMobProjectile(level);
         projectile.setPosition(this.x + 50, this.y + 100);
@@ -47,7 +59,10 @@ public class EntityBoss extends EntityMob {
     }
 
 
-
+    /***
+     * Draws the boss image and all the projectiles
+     * @param g The graphics context to draw with
+     */
     @Override
     public void draw(GraphicsContext g){
         super.draw(g);

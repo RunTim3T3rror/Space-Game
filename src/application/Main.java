@@ -20,7 +20,7 @@ public class Main extends Application {
 
     /**
      * Constructs a window
-     * @param primaryStage Stage for window
+     * @param stage Stage for window
      * @throws Exception
      */
     @Override
@@ -48,10 +48,15 @@ public class Main extends Application {
     }
 
 
+    /**
+     * Called every game tick
+     * @param gc The graphcis context to draw with
+     */
     private void run(GraphicsContext gc) {
         Load.gsm.update();
         Load.gsm.draw(gc);
     }
+
     /**
      *  Launches the program
      * @param args Command line arguments

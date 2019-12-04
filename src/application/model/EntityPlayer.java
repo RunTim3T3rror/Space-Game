@@ -13,7 +13,11 @@ public class EntityPlayer extends Entity{
 	
 	private int fireTime;
 	private boolean coolDown;
-	
+
+	/***
+	 * Constructor for the player
+	 * @param level The current level
+	 */
 	public EntityPlayer(LevelState level) {
 		super(level);
 		setImage(Load.getImage("Player"));
@@ -24,6 +28,10 @@ public class EntityPlayer extends Entity{
 		speed = 2;
 	}
 
+	/***
+	 * Updates the player
+	 * Updates projectiles player has shot
+	 */
 	@Override
 	public void update(){
 		super.update();
@@ -41,7 +49,10 @@ public class EntityPlayer extends Entity{
 		}
 	
 	}
-	
+
+	/**
+	 * Fires a shot if the players cooldown is false
+	 */
 	public void fire(){
 		if(coolDown) return;
 		
@@ -51,6 +62,10 @@ public class EntityPlayer extends Entity{
 		coolDown = true;
 	}
 
+	/**
+	 * Sets the players position
+	 * Constrains the player in the window
+	 */
 	@Override
 	public void getPosition() {
 		if (right) {
@@ -67,6 +82,11 @@ public class EntityPlayer extends Entity{
 		}
 	}
 
+	/***
+	 * Draws the player
+	 * Draws all the projectiles the player has shot
+	 * @param g The graphcis context to draw with
+	 */
 	@Override
 	public void draw(GraphicsContext g){
 		super.draw(g);
@@ -75,6 +95,10 @@ public class EntityPlayer extends Entity{
 			projectiles.get(i).draw(g);
 		}
 	}
-	
+
+	/***
+	 * Gets the arraylist of the projectiles
+	 * @return The arralist of projectiles
+	 */
 	public ArrayList<EntityProjectile> getProjectiles(){return projectiles;}
 }

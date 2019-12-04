@@ -17,6 +17,10 @@ public class WonState implements GameState{
     private Font textFont, titleFont;
     private Background background;
 
+    /***
+     * Constructor for won state
+     * @param gsm The game state manager
+     */
     public WonState(GameStateManager gsm){
         this.gsm = gsm;
 
@@ -28,6 +32,10 @@ public class WonState implements GameState{
 
     public void update(){}
 
+    /***
+     * Draws the view
+     * @param g The graphics context to draw with
+     */
     public void draw(GraphicsContext g){
         g.setFill(Color.WHITE);
         g.fillRect(0, 0, Main.WIDTH, Main.HEIGHT);
@@ -43,6 +51,10 @@ public class WonState implements GameState{
         g.fillText("the main menu.", 100, 330);
     }
 
+    /***
+     *  Called when a kew is pressed
+     * @param k The pressed key
+     */
     public void keyPressed(int k){
         if(k == KeyEvent.VK_ENTER)
             gsm.changeState(GameStateManager.MENUSTATE);
@@ -50,9 +62,7 @@ public class WonState implements GameState{
             System.exit(0);
     }
 
-    public void keyReleased(int k){
-
-    }
+    public void keyReleased(int k){ }
 
 }
 

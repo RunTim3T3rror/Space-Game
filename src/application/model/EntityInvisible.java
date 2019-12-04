@@ -9,7 +9,10 @@ public class EntityInvisible extends EntityMob{
 	//Time
 	private int time, maxTime;
 
-	
+	/***
+	 * Constructor for entity invisible
+	 * @param level The current level
+	 */
 	public EntityInvisible(LevelState level){
 		super(level);
 		setImage(Sprite.mobSprite.getImage(1));
@@ -18,13 +21,20 @@ public class EntityInvisible extends EntityMob{
 		maxTime = 200;
 		time = -1;
 	}
-	
+
+	/**
+	 * Update function
+	 * increases time
+	 */
 	@Override
 	public void update() {
 		super.update();
 		time++;
 	}
-	
+
+	/***
+	 * AI sets mob to invincible everytime time exceeds max time
+	 */
 	@Override
 	protected void mobAI() {
 		super.mobAI();

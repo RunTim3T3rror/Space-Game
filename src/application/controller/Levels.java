@@ -26,6 +26,11 @@ public class Levels {
 	public static Levels levelFive = new Levels(new LevelState(Load.getImage("LevelFive")));
 	public static Levels levelSix = new Levels(new LevelState(Load.getImage("LevelSix")));
 
+	/***
+	 * Constructor for the levels
+	 * Sets the id for each level
+	 * @param levelState The current level state
+	 */
 	public Levels(LevelState levelState){
 		this.levelState = levelState;
 		id = maxId;
@@ -33,9 +38,23 @@ public class Levels {
 		levels.add(this);
 	}
 
+	/***
+	 * Gets the id for a level
+	 * @return The id of a level
+	 */
 	public int getId(){return id;}
+
+	/***
+	 * Get the level state a levels uses
+	 * @return Returns the level state
+	 */
 	public LevelState getLevelState(){return levelState;}
-	
+
+	/***
+	 * Gets a level based on an id
+	 * @param id The id to search for
+	 * @return Returns the levels
+	 */
 	public static Levels getLevel(int id){
 		for(int i = 0; i < levels.size(); i++){
 			if(id == levels.get(i).id) return levels.get(i);

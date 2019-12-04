@@ -9,11 +9,20 @@ public class Image {
 	private BufferedImage image;
 
 	private String name;
-	
+
+	/**
+	 * Creaats image in default folder with png as the type
+	 * @param name Name of the image
+	 */
 	public Image(String name){
 		this("Default", name, ".png");
 	}
-	
+
+	/***
+	 * Creats image in default folder with custom type
+	 * @param name Name of the image
+	 * @param type Type of the image
+	 */
 	public Image(String name, String type){
 		this("Default", name ,type);
 	}
@@ -32,9 +41,16 @@ public class Image {
 			e.printStackTrace();
 		}
 	}
-	
-	
-	
+
+	/**
+	 * Gets the name of the image
+	 * @return The name of the image
+	 */
 	public String getName(){return name;}
+
+	/**
+	 * The buffered image
+	 * @return the buffered image
+	 */
 	public BufferedImage getImage(){return image;}
 }

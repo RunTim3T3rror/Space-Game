@@ -31,6 +31,10 @@ public class Cell extends Entity {
         isSelected = false;
     }
 
+    /***
+     * Sets the celltype of a cell
+     * @param cellType The cell type to set it to
+     */
     public void setCellType(CellType cellType) {
         this.cellType = cellType;
         switch (cellType) {
@@ -52,13 +56,31 @@ public class Cell extends Entity {
         }
     }
 
+    /***
+     * sets if a cell is selected
+     * @param isSelected
+     */
     public void setSelected(boolean isSelected) {
         this.isSelected = isSelected;
     }
 
+    /**
+     * Gets a cells cell tyoe
+     * @return The cell type
+     */
     public CellType getCellType() { return cellType; }
+
+    /**
+     * Gets if a cell is selected
+     * @return If a cell is selected
+     */
     public boolean isSelected() { return isSelected; }
 
+    /***
+     * Draws the cell
+     * Draws a rectangle and a corresponding image based on celltype
+     * @param g The Graphics context to draw with
+     */
     @Override
     public void draw(GraphicsContext g) {
         if (isSelected) {

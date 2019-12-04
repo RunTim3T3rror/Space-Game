@@ -20,6 +20,10 @@ public class EntityMob extends Entity {
 	private int hitMaxTime;
 	private int nextDown;
 
+	/***
+	 * Constructor for entity mob
+	 * @param level
+	 */
 	public EntityMob(LevelState level) {
 		super(level);
 		speed = 2;
@@ -32,6 +36,10 @@ public class EntityMob extends Entity {
 		invincible = false;
 	}
 
+	/***
+	 * Default Mob AI for all Entity Mob
+	 * Moves entity back and forth randomly
+	 */
 	protected void mobAI() {
 		// Horizontal
 		double rand = Math.random() * 2;
@@ -70,6 +78,9 @@ public class EntityMob extends Entity {
 		}
 	}
 
+	/***
+	 * Creates an entity explosion if the entity mob was killed
+	 */
 	public void checkHealth() {
 		if (health < 0 || health == 0) {
 			dead = true;
@@ -78,6 +89,9 @@ public class EntityMob extends Entity {
 
 	}
 
+	/***
+	 * Updates the mob
+	 */
 	@Override
 	public void update() {
 		if (dead) {
@@ -90,6 +104,11 @@ public class EntityMob extends Entity {
 		checkHealth();
 	}
 
+	/***
+	 * Draws the mob
+	 * Draws a red mask over the mob if the mob was hit
+	 * @param g The graphcis context to draw with
+	 */
 	@Override
 	public void draw(GraphicsContext g) {
 		if (dead) {
@@ -104,5 +123,9 @@ public class EntityMob extends Entity {
 		g.drawImage(SwingFXUtils.toFXImage(this.getImage(), null), x, y);
 	}
 
+	/***
+	 * Sets if the mob was hit
+	 * @param hit If the mob was hit
+	 */
 	public void setHit(boolean hit){ this.hit = hit; }
 }
