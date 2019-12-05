@@ -6,8 +6,9 @@
 ### intellij (please use if you can)
 1. Download the Space-Game folder from github either by using `git clone https://github.com/RunTim3T3rror/Space-Game.git` or by downloading the zip.
 2. Open Intelij
-3. Open the project that was downloaded in Intelij 
+3. Open the project with Intelij
 4. You may need to add then JavaFX library which is included in the libs folder
+5. Right click on application.Main class and select run Main.main()
 5. If Intelij asks you specify and out directory choose the out folder in the project
 6. Run the game from the application.Main class 
 ### eclipse
